@@ -1,0 +1,43 @@
+group 'dev.koller.certificate_pinning_httpclient'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.0'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    namespace = 'dev.koller.certificate_pinning_httpclient'
+    compileSdkVersion 34
+
+    defaultConfig {
+        minSdkVersion 19
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+configurations.maybeCreate("default")
+
+dependencies {}
